@@ -20,16 +20,16 @@
   <meta name="description" content="M Ahsan Nangore — Web Developer (Front & Back‑end), Data Analyst, Office Expert, aspiring Data Scientist with diverse IT skills.
   <meta name="keywords" content="M Ahsan Nangore, Web Developer, Front-end, Back-end, Data Analyst, Office Expert, aspiring Data Scientist, IT skills" />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://your-domain.com/" />
+  <link rel="canonical" href="https://m-ahsan-nangore.vercel.app/" />
   <meta property="og:title" content="M Ahsan Nangore" />
   <meta property="og:description" content="M Ahsan Nangore — Web Developer & Data Analyst skilled in front‑end, back‑end, and data visualization. Expert in JavaScript, React, Node.js, SQL, Python, and turning data into actionable insights."  />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.com/" />
-  <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+  <meta property="og:url" content="https://m-ahsan-nangore.vercel.app/" />
+  <meta property="og:image" content="https://m-ahsan-nangore.vercel.app/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="M Ahsan Nangore" />
   <meta name="twitter:description" content="Responsive, modern web experiences crafted with care. Explore projects and get in touch." />
-  <meta name="twitter:image" content="https://your-domain.com/og-image.jpg" />
+  <meta name="twitter:image" content="https://m-ahsan-nangore.vercel.app/og-image.jpg" />
   <meta name="theme-color" content="#fad648" />
 
   <!-- Structured Data -->
@@ -38,10 +38,10 @@
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"M Ahsan Nangore",
-    "url":"https://your-domain.com/",
+    "url":"https://m-ahsan-nangore.vercel.app.com/",
     "sameAs":[
-      "https://www.facebook.com/M.AhsanNangore",
-      "https://www.linkedin.com/in/M.AhsanNangore",
+      "https://www.facebook.com/m.ahsan.nangore",
+      "https://www.linkedin.com/in/muhammad-ahsan-nangore-30b353384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       "https://www.tiktok.com/@M.AhsanNangore"
     ],
     "jobTitle":"Web Developer"
@@ -158,12 +158,29 @@
       border-bottom:50vh solid var(--main-color);
       border-left:384px solid transparent;
     }
-
+    
     .home-img img {
       position:absolute; bottom:0; right:1px; pointer-events:none; max-width:480px; max-height:100vh;
     }
-
     span { color:var(--main-color); }
+   
+    /* By default sab jagah hide */
+.home-img img,
+.home .profession-box .circle,
+.home .profession-container .overlay,
+.home .profession-box .profession {
+  display: none !important;
+}
+
+/* ✅ Sirf desktop (min-width: 1025px) par show */
+@media screen and (min-width: 1025px) {
+  .home-img img,
+  .home .profession-box .circle,
+  .home .profession-container .overlay,
+  .home .profession-box .profession {
+    display: block !important;
+  }
+}
 
     /* About (desktop unchanged) */
     .about { display:flex; justify-content:center; align-items:center; gap:4rem;text-align: justify; line-height: 1.6; }
@@ -641,11 +658,26 @@
     img { border-radius:20px; }
 
     /* Gooey canvases */
-    canvas {
-      position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:-1;
-      -webkit-filter:url("#goo"); filter:url("#goo"); pointer-events:none;
-    }
-    svg { display:none; }
+    /* Default (desktop/laptop) */
+canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+  -webkit-filter: url("#goo");
+  filter: url("#goo");
+  pointer-events: none;
+}
+svg { display: none; }
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  canvas,
+  svg {
+    display: none !important; /* ✅ hide on mobile */
+  }
+}
+
 
     /* ====== ENHANCED BREAKPOINTS (Only Mobile/Tablet tweaks; Desktop untouched) ====== */
     @media (max-width:1200px) {
@@ -1153,7 +1185,7 @@
       <div class="portfolio-layer">
         <h4>Business/Web</h4>
         <p>Built with Login/Register system using HTML, CSS, JS, Bootstrap, PHP.</p>
-        <a href="E:\MY DOCUMENTS\MY WEBSITES\Traning  CEO" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/AhsanIlyasDS/first.py" target="_blank" rel="noopener noreferrer">
           <i class="bx bx-link-external"></i>
         </a>
       </div>
@@ -1170,6 +1202,7 @@
         </a>
       </div>
     </div>
+  </div>
   <!-- View More Button -->
   <div class="view-more-container">
     <button class="view-more-btn" onclick="openMoreProjects()">View More Projects</button>
@@ -1224,7 +1257,7 @@
         </div>
       </div>
     </div>
-  </section>
+</section>
 <!-- Certifications Modal -->
 <div id="certModal" class="modal">
   <div class="modal-content">
@@ -1329,14 +1362,28 @@
           <p>"Proactive maintenance and swift support — peace of mind for our business."</p>
         </div>
       </div>
-
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
-
+<!<!-- contact section design -->
+<section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me!</span></h2>
+  <form action="https://formspree.io/f/meorjvkd" method="POST">
+    <div class="input-box">
+      <input name="name" type="text" placeholder="Full Name" required>
+      <input name="email" type="email" placeholder="Email Address" required>
+    </div>
+    <div class="input-box">
+      <input name="number" type="tel" placeholder="Mobile Number" required>
+      <input name="subject" type="text" placeholder="Email Subject" required> <!-- ✅ fixed -->
+    </div>
+    <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+    <input type="submit" value="Send Message" class="btn">
+  </form>
+</section>
 
   <footer class="footer">
   <div class="footer-container">
@@ -1619,18 +1666,38 @@ function closeModal() {
     });
 
     // Contact Validation
-    const contactForm = document.querySelector('.contact form');
-    contactForm.addEventListener('submit', (e) => {
-      const name = contactForm.querySelector('input[name="name"]').value.trim();
-      const email = contactForm.querySelector('input[name="email"]').value.trim();
-      const number = contactForm.querySelector('input[name="number"]').value.trim();
-      const subject = contactForm.querySelector('input[name="subject"]').value.trim();
-      const message = contactForm.querySelector('textarea[name="message"]').value.trim();
-      if (!name || !email || !number || !subject || !message) {
-        e.preventDefault();
-        alert('Please fill in all fields before submitting.');
-      }
-    });
+   // Contact Validation
+const contactForm = document.querySelector('.contact form');
+
+contactForm.addEventListener('submit', (e) => {
+  const name = contactForm.querySelector('input[name="name"]').value.trim();
+  const email = contactForm.querySelector('input[name="email"]').value.trim();
+  const number = contactForm.querySelector('input[name="number"]').value.trim();
+  const subject = contactForm.querySelector('input[name="subject"]').value.trim();
+  const message = contactForm.querySelector('textarea[name="message"]').value.trim();
+
+  if (!name || !email || !number || !subject || !message) {
+    e.preventDefault();
+    alert('Please fill in all fields before submitting.');
+    return;
+  }
+
+  // Extra validation
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    e.preventDefault();
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  if (isNaN(number) || number.length < 7) {
+    e.preventDefault();
+    alert('Please enter a valid phone number.');
+    return;
+  }
+});
+
+
 
     // Dynamic Tab Title (section-based + when tab inactive)
     const originalTitle = "M Ahsan Nangore_portfolio";
